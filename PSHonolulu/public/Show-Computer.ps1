@@ -27,7 +27,11 @@ function Show-Computer
 
     [CmdletBinding()]
     param(
+        [parameter( ValueFromPipeline )]
+        [alias('ServerName', 'CN')]
+        [string[]]
         $ComputerName = $env:COMPUTERNAME,
+
         [ValidateSet(
             'overview',
             'certificates',
@@ -47,6 +51,7 @@ function Show-Computer
             'VirtualSwitches',
             'WindowsUpdate'
         )]
+        [string]
         $View = 'overview'
     )
 
