@@ -60,7 +60,7 @@ function Show-Computer
     {
         try
         {
-            foreach ($node in $ComputerName)
+            foreach ( $node in $ComputerName )
             {
                 Start-Process "$uri/servermanager/connections/server/$node/tools/$View"
             }
