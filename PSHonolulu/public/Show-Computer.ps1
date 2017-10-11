@@ -28,6 +28,25 @@ function Show-Computer
     [CmdletBinding()]
     param(
         $ComputerName = $env:COMPUTERNAME,
+        [ValidateSet(
+            'overview',
+            'certificates',
+            'devices',
+            'Events',
+            'Files',
+            'Firewall',
+            'UsersGroups',
+            'Network',
+            'Processes',
+            'Registry',
+            'RolesFeatures',
+            'Services',
+            'Storage',
+            'StorageReplica',
+            'VirtualMachines',
+            'VirtualSwitches',
+            'WindowsUpdate'
+        )]
         $View = 'overview'
     )
 
@@ -35,6 +54,7 @@ function Show-Computer
     {
         $info = Get-HonoluluServer
         $uri = 'http://{0}:{1}' -f $info.ComputerName, $info.Port
+        $View = $View.ToLower()
     }
     process
     {
