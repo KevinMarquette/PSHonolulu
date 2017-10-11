@@ -10,6 +10,9 @@ function Show-Computer
     .PARAMETER ComputerName
     Parameter description
 
+    .PARAMETER View
+    The view to show by default.
+
     .EXAMPLE
     Show-Computer
 
@@ -21,17 +24,26 @@ function Show-Computer
     .NOTES
     General notes
     #>
-    
+
     [CmdletBinding()]
     param(
-        $ComputerName = $env:COMPUTERNAME
+        $ComputerName = $env:COMPUTERNAME,
+        $View = 'overview'
     )
 
+    begin
+    {
+        $info = Get-HonoluluServer
+        $uri = 'http://{0}:{1}' -f $info.ComputerName, $info.Port
+    }
     process
     {
         try
         {
-            $ComputerName
+            foreach ($node in $ComputerName)
+            {
+                Start-Process "$uri/servermanager/connections/server/$node/tools/$View"
+            }
         }
         catch
         {
