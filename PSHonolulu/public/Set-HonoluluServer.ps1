@@ -22,6 +22,7 @@ function Set-HonoluluServer
     General notes
     #>
     
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
     [CmdletBinding()]
     param(
         $ComputerName = $env:COMPUTERNAME,
