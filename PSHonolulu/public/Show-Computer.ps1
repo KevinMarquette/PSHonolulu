@@ -67,7 +67,9 @@ function Show-Computer
         {
             foreach ( $node in $ComputerName )
             {
-                Start-Process "$uri/servermanager/connections/server/$node/tools/$View"
+                $endpoint = "{0}/servermanager/connections/server/{1}/tools/{2}" -f $uri, $node.tolower(), $View
+                Write-Verbose $endpoint
+                Start-Process $endpoint
             }
         }
         catch
