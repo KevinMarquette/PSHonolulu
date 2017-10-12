@@ -12,7 +12,7 @@ Install Project Honolulu from Microsoft:
  
 [Windows Server Honolulu Evaluation](https://www.microsoft.com/en-US/evalcenter/evaluate-windows-server-honolulu)
 
-Install from the PSGallery and Import the module
+Install this Module from the PSGallery and Import the module
 
     Install-Module PSHonolulu
     Import-Module PSHonolulu
@@ -22,6 +22,7 @@ Install from the PSGallery and Import the module
 If you installed Honolulu on your local computer, you should be able to open the details of any computer by running this command:
 
     Show-Computer -ComputerName $ComputerName
+    Show-Computer -ComputerName $ComputerName -View Services
 
 If Honolulu is installed on a remote computer, you can set the address with this command:
 
