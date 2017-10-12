@@ -24,9 +24,12 @@ If you installed Honolulu on your local computer, you should be able to open the
     Show-Computer -ComputerName $ComputerName
     Show-Computer -ComputerName $ComputerName -View Services
 
+The important detail here is that you don't need to first import `$ComputerName` into Honolulu first. You can specify any server in your organization where you have access to WinRM and WMI.
+
 If Honolulu is installed on a remote computer, you can set the address with this command:
 
     Set-HonoluluServer -ComputerName $ServerName -Port 6516
+    Get-HonoluluServer
 
 ## More Information
 
