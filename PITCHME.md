@@ -23,7 +23,9 @@ Install from the PSGallery and Import the module
 
     Show-Computer -ComputerName $ComputerName
 
-This will open Honolulu to the page for `$ComputerName`. This can be any computer, even one that was not imported into Honolulu ahead of time
+This will open Honolulu to the page for `$ComputerName`. 
+This can be any computer, even one that was 
+not imported into Honolulu ahead of time
 
 ---
 
@@ -31,7 +33,8 @@ This will open Honolulu to the page for `$ComputerName`. This can be any compute
 
     Show-Computer -ComputerName $ComputerName -View Services
 
-This will open Honolulu to the services page for `$ComputerName`.
+This will open Honolulu to the 
+services page for `$ComputerName`.
 
 ---
 
@@ -39,7 +42,8 @@ This will open Honolulu to the services page for `$ComputerName`.
 
     Get-Content servers.txt | Show-Computer -View Events
 
-Pipe in a list of computers, it will open each one of them.
+Pipe in a list of computers, 
+it will open each one of them.
 
 ---
 
